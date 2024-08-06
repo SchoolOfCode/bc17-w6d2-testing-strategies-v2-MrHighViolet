@@ -51,7 +51,7 @@ You are tasked with testing a registration form that has the following input fie
 
 | Input Field | Valid Equivalence Classes | Invalid Equivalence Classes |
 |-------------|---------------------------|----------------------------|
-| Age         |                           |                            |
+| Age         |  18 - 120                 |  0 - 17, >=121                    |
 
 ### Task 2: Identify Equivalence Classes for Email
 1. Identify the valid equivalence classes for the Email field.
@@ -59,8 +59,12 @@ You are tasked with testing a registration form that has the following input fie
 3. Fill in the table below with the identified equivalence classes.
 
 | Input Field | Valid Equivalence Classes | Invalid Equivalence Classes |
-|-------------|---------------------------|----------------------------|
-| Email       |                           |                            |
+|-------------|---------------------------|-----------------------------|
+| Email       | abc@mail.com              |  abc-@mail.com              |
+|             | abc.def@mail.com          |  abc..def@mail.com          |
+|             | abc-d@mail.com            |  .abc@mail.com              |
+|             | abc_def@mail.com          |  abc#def@mail.com           |
+|             |                           |                             |
 
 ### Task 3: Identify Equivalence Classes for Password
 1. Identify the valid equivalence classes for the Password field.
@@ -69,7 +73,11 @@ You are tasked with testing a registration form that has the following input fie
 
 | Input Field | Valid Equivalence Classes | Invalid Equivalence Classes |
 |-------------|---------------------------|----------------------------|
-| Password    |                           |                            |
+| Password    |  Passw0rd                 | Password                   | Missing number
+| Password    |  My1passwordthatisrad     | passw0rd                   | missing capital
+| Password    |                           | 1Unit                      | Too short
+| Password    |                           | 12345OneTwoThreeFourFive   | Too long
+| Password    |                           | ILOVEMUM12345              | Missing lowercase
 
 ### Task 4: Discuss and Share
 1. Discuss your findings with your group.
